@@ -2,6 +2,7 @@
 set -e
 HERE=$(dirname "$0")
 cd "$HERE"
+HERE=$(pwd)  # Convert to absolute path.
 
 mkdir -p notebooks_html
 
