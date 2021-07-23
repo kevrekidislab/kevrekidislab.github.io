@@ -12,7 +12,7 @@ for notebook_ipynb in notebooks_list:
     notebooks_list_html += (
         "\n    <li>"
         + f"<a href='notebooks_html/{notebook_html}'>{notebook_base}</a>"
-        + f" | (<a href='notebooks/{notebook_ipynb}'>{notebook_ipynb}</a>)"
+        + f" | (<a href='notebooks/{notebook_ipynb}' download='{notebook_ipynb}''>{notebook_ipynb}</a>)"
         + "</li>"
     )
 notebooks = f"<h2>Notebooks</h2>{notebooks_list_html}"
