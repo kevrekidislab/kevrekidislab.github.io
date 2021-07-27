@@ -11,14 +11,14 @@ backlinks_html = """
         <a href="https://kevrekidislab.github.io/">Back to kevrekidislab.github.io index.</a>
     </p>
 </div>
-""".strip()
+""".strip() + '\n'
 
 for i, line in enumerate(html):
     if line.startswith('<body'):
         html[i] = line + backlinks_html
         break
 
-out = '\n'.join(html)
+out = ''.join(html)
 with open(html_path, 'w') as f:
     f.write(out)
 
