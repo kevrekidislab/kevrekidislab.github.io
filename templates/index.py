@@ -1,7 +1,9 @@
-from sys import argv
-notebooks_list = argv[1:]
+from glob import glob
+from os.path import dirname, basename, join
+HERE = dirname(__file__)
 
-from os.path import basename
+notebooks_list = glob(join(HERE, '..', 'notebooks', '*.ipynb'))
+
 
 title = "Kevrekidis Lab Tutorial Notebooks"
 notebooks_list_html = "<ul>"
@@ -12,7 +14,7 @@ for notebook_ipynb in notebooks_list:
     notebooks_list_html += (
         "\n    <li>"
         + f"<a href='notebooks_html/{notebook_html}'>{notebook_base}</a>"
-        + f" | (<a href='notebooks/{notebook_ipynb}' download='{notebook_ipynb}''>{notebook_ipynb}</a>)"
+        + f" | (<a href='notebooks/{notebook_ipynb}' download='{notebook_ipynb}''>notebook</a>)"
         + "</li>"
     )
 notebooks = f"{notebooks_list_html}"

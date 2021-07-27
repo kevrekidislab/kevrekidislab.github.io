@@ -8,7 +8,6 @@ HERE=$(pwd)  # Convert to absolute path.
 mkdir -p notebooks_html
 
 cd notebooks
-notebook_paths=($(find . -name "*.ipynb"))
 IFS='
 '
 
@@ -19,4 +18,4 @@ do
 done
 
 cd "$HERE"
-python templates/index.py $notebook_paths > index.html
+python templates/index.py > index.html
