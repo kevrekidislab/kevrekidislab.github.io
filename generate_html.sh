@@ -18,4 +18,10 @@ do
 done
 
 cd "$HERE"
+
+for notebook_html in $(ls notebooks_html/*.html)
+do
+    python add_backlinks.py "$notebook_html"
+done
+
 python templates/index.py > index.html
